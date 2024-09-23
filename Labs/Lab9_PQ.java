@@ -56,6 +56,6 @@ public class Lab9_PQ {
         heap.insert(13);
         heap.insert(17);
         heap.insert(18);        
-        System.out.println(Arrays.toString(heap.sort()));
+        System.out.println(heap.sort());
     }
 }

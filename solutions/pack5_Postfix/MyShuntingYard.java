@@ -4,12 +4,18 @@ import java.util.StringTokenizer;
 
 public class MyShuntingYard {
     private static int order(String c) {
-        return switch (c) {
-            case "+", "-" -> 1;
-            case "*", "/" -> 2;
-            default -> 0;
-        };
+        switch (c) {
+            case "+":
+            case "-":
+                return 1;
+            case "*":
+            case "/":
+                return 2;
+            default:
+                return 0;
+        }
     }
+    
     public static String infixToPostfix(String infixString) {
         MyQueueExtendsLinkedList<String> queue = new MyQueueExtendsLinkedList<>();
         MyStackA<String> stack = new MyStackA<>();
