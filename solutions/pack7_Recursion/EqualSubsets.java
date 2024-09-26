@@ -1,7 +1,5 @@
 package solutions.pack7_Recursion;
 
-import java.util.Arrays;
-
 public class EqualSubsets {
     public static boolean canPartition_Recurse(int ... arr) {
         int sum = 0;

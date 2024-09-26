@@ -2,7 +2,7 @@ package solutions.pack4;
 
 import java.util.HashSet;
 
-public class MyLinkedListTricky_660880 extends MyLinkedList_660880 {
+public class MyLinkedListTricky extends MyLinkedList {
     public void q1_rotate_counter_clockwise(int k) {
         if (k >= size()) {
             return;

@@ -21,8 +21,8 @@ public class Lab11_Main {
         task3();
         System.out.println();
 
-        // System.out.println("Task 4: Implement the findTotalMaxDepth method in TheLake class");
-        // // task4();
+        System.out.println("Task 4: Implement the findTotalMaxDepth method in TheLake class");
+        task4();
 
     }
 
@@ -143,7 +143,7 @@ public class Lab11_Main {
     }
 
     public static void task4() {
-        // TheLake t = new TheLake();
+        TheLake t = new TheLake();
         /*
          * 1 1 1 1 1
          * 1 0 0 0 1
@@ -157,29 +157,35 @@ public class Lab11_Main {
          * 0 0 5
          * 10
          */
-        // int map[][] = { { 1, 2, 0 }, { 3, 4, 0 }, { 0, 0, 5 } };
-        // int expectedMap = 10;
-        // int map2[][] = { { 1, 1, 1, 1, 1 }, { 1, 0, 0, 0, 1 }, { 1, 1, 4, 0, 1 }, { 1, 0, 0, 0, 1 },
-        //         { 1, 1, 1, 1, 1 } };
-        // int expectedMap2 = 21;
+        int map[][] = { { 1, 2, 0 },
+                        { 3, 4, 0 }, 
+                        { 0, 0, 5 } };
+        int expectedMap = 10;
+        
+        int map2[][] = {    { 1, 1, 1, 1, 1 }, 
+                            { 1, 0, 0, 0, 1 }, 
+                            { 1, 1, 4, 0, 1 }, 
+                            { 1, 0, 0, 0, 1 },
+                            { 1, 1, 1, 1, 1 } };
+        int expectedMap2 = 21;
 
-        // int actual1 = t.findTotalMaxDepth(map);
-        // int actual2 = t.findTotalMaxDepth(map2);
+        int actual1 = t.findTotalMaxDepth(map);
+        int actual2 = t.findTotalMaxDepth(map2);
 
-        // if (actual1 == expectedMap) {
-        //     System.out.println("\033[0;32m" + "Passed" + "\033[0m" + "  Expected: " + expectedMap + " got: " + actual1);
-        // } else {
-        //     System.out.println(
-        //             "\033[0;31m" + "Failed" + "\033[0m" + "  Expected: " + expectedMap + " but got: " + actual1);
-        // }
+        if (actual1 == expectedMap) {
+            System.out.println("\033[0;32m" + "Passed" + "\033[0m" + "  Expected: " + expectedMap + " got: " + actual1);
+        } else {
+            System.out.println(
+                    "\033[0;31m" + "Failed" + "\033[0m" + "  Expected: " + expectedMap + " but got: " + actual1);
+        }
 
-        // if (actual2 == expectedMap2) {
-        //     System.out
-        //             .println("\033[0;32m" + "Passed" + "\033[0m" + "  Expected: " + expectedMap2 + " got: " + actual2);
-        // } else {
-        //     System.out.println(
-        //             "\033[0;31m" + "Failed" + "\033[0m" + "  Expected: " + expectedMap2 + " but got: " + actual2);
-        // }
+        if (actual2 == expectedMap2) {
+            System.out
+                    .println("\033[0;32m" + "Passed" + "\033[0m" + "  Expected: " + expectedMap2 + " got: " + actual2);
+        } else {
+            System.out.println(
+                    "\033[0;31m" + "Failed" + "\033[0m" + "  Expected: " + expectedMap2 + " but got: " + actual2);
+        }
 
     }
 }

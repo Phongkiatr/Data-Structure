@@ -1,10 +1,5 @@
 package solutions.pack11_Graph;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.PriorityQueue;
-
 import java.util.PriorityQueue;
 
 public class NetworkOptimizer {
@@ -12,7 +7,8 @@ public class NetworkOptimizer {
      * <input>
      * N is the number of computers (nodes) in the network.
      * M is the number of cables (edges) available for connecting the computers.
-     * S is the ID of the starting node. The ID of each node will start from 1 up to N.
+     * S is the ID of the starting node. The ID of each node will start from 1 up to
+     * N.
      * 
      * <Output>
      * Output a single integer, the total latency of the optimised network. If it is
@@ -58,7 +54,7 @@ public class NetworkOptimizer {
         // Main Loop
         while (!pq.isEmpty() && edgesInMST < N - 1) { // number of edges in MST is N - 1
             Edge minEdge = pq.poll();
-            Node targetNode = inMST[minEdge.getNode2().getId() - 1] ? minEdge.getNode1() : minEdge.getNode2(); 
+            Node targetNode = inMST[minEdge.getNode2().getId() - 1] ? minEdge.getNode1() : minEdge.getNode2();
 
             if (inMST[targetNode.getId() - 1]) {
                 continue; // If in MST, skip this edge
@@ -74,9 +70,9 @@ public class NetworkOptimizer {
                 if (!pq.contains(edge)) {
                     pq.add(edge);
                 }
-            } 
+            }
         }
-        
+
         // If not all nodes are connected, return -1
         if (edgesInMST != N - 1) {
             return -1;
@@ -114,36 +110,49 @@ public class NetworkOptimizer {
          * The algorithm should return the total latency of the minimum spanning tree
          */
         Node startNode = nodes[0];
-        PriorityQueue<Edge> pq = new PriorityQueue<>(new EdgeComparator());
+        PriorityQueue<EdgeWithBandwidth> pq = new PriorityQueue<>(new EdgeComparator());
 
         // implement the algorithm here
+        boolean[] inMST = new boolean[N];
+        int edgesInMST = 0;
+
+        // Add all edges from the starting node to the priority queue
+        inMST[startNode.getId() - 1] = true;
+        pq.addAll(startNode.getEdgesWithBandwidth());
+
+        // Main Loop
+        while (!pq.isEmpty() && edgesInMST < N - 1) { // number of edges in MST is N - 1
+            Edge minEdge = pq.poll();
+
+            if (minEdge instanceof EdgeWithBandwidth && ((EdgeWithBandwidth) minEdge).getBandwidth() < T) {
+                continue; // If Bandwidth < T, skip this edge
+            }
+
+            Node targetNode = inMST[minEdge.getNode2().getId() - 1] ? minEdge.getNode1() : minEdge.getNode2();
+
+            if (inMST[targetNode.getId() - 1]) {
+                continue; // If in MST, skip this edge
+            }
+
+            totalLatency += minEdge.getLatency();
+            edgesInMST++;
+
+            // Mark as in MST
+            inMST[targetNode.getId() - 1] = true;
+
+            // Add all edges from the target node to the priority queue
+            for (EdgeWithBandwidth edge : targetNode.getEdgesWithBandwidth()) {
+                if (!pq.contains(edge)) {
+                    pq.add(edge);
+                }
+            }
+        }
+
+        if (edgesInMST != N - 1) {
+            return -1;
+        }
 
         return totalLatency;
 
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

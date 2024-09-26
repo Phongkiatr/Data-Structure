@@ -1,6 +1,6 @@
 package solutions.pack4;
 
-public class MyLinkedList_660880 {
+public class MyLinkedList {
     public class Node {
         int data;
         Node next;
