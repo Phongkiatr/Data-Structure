@@ -11,7 +11,7 @@ public class MyStackA<T> {
 
     public T pop() {
         if (!isEmpty()) {
-            return (T) stack[--top];      
+            return (T) stack[--top];
         }
         return null;
     }

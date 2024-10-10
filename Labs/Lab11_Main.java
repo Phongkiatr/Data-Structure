@@ -161,7 +161,7 @@ public class Lab11_Main {
                         { 3, 4, 0 }, 
                         { 0, 0, 5 } };
         int expectedMap = 10;
-        
+
         int map2[][] = {    { 1, 1, 1, 1, 1 }, 
                             { 1, 0, 0, 0, 1 }, 
                             { 1, 1, 4, 0, 1 }, 

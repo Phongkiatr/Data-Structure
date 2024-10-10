@@ -26,12 +26,12 @@ public class Lab5_RPN_Shunting_Main {
                 System.out.println("Token " + i++ + " = " + t + " is an opearator");
         }
     }
-    // static void task2(String postfixString) {
-    //     //testTokenizer(rpn);
-    //     System.out.println(postfixString);
-    //     System.out.println("= " + MyRPN.computeRPN(postfixString));
+    static void task2(String postfixString) {
+        //testTokenizer(rpn);
+        System.out.println(postfixString);
+        System.out.println("= " + MyRPN.computeRPN(postfixString));
 
-    // }
+    }
     private static void task4() {
         System.out.println("-----MyQueueListWarp Tester-----");
         // MyQueueListWrap<String> queue = new MyQueueListWrap<>();
@@ -82,6 +82,6 @@ public class Lab5_RPN_Shunting_Main {
         // // if (args.length > 0)
         // //     infixString = args[0];
         computeInfix(infixString);
-        // testTokenizer("3 1 - 4 5 + *");
+        testTokenizer("3 1 - 4 5 + *");
     }    
 }
