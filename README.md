@@ -8,5 +8,8 @@ This repository contains all lab files and assignments for the Data Structures c
 Implementation of data structures in Java
 Sample input and output files for testing
 Detailed comments and explanations for each lab
-📚 Usage: Feel free to explore the files, contribute improvements, or use them as a reference for your own studies in data structures!
+
+📚 Usage: 
+
+Feel free to explore the files, contribute improvements, or use them as a reference for your own studies in data structures!
 
